@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/custom_tela1"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="ScrollViewSize">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ru.dimorinny.floatingtextbutton.FloatingTextButton
+                    android:id="@+id/fabAjuda1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="28dp"
+                    app:floating_background_color="@color/primary4"
+                    app:floating_left_icon="@drawable/ic_baseline_help_24"
+                    app:floating_title="Ajuda"
+                    app:floating_title_color="@color/primary2" />
+
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/edTxdes_rec"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:hint="Nome da Receita"
+                android:textColor="@color/primary2"
+                android:textColorHint="@color/primary4"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:inputType="textCapSentences"
+                android:maxLength="48"
+                android:nextFocusDown="@id/edTxtem_rec"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText"
+                android:autofillHints="" />
+
+            <ImageView
+                android:id="@+id/imgVimg_rec"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edTxdes_rec"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="147dp"
+                android:layout_height="26dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:text="Click sobre a camera para escolher a imagem"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="@+id/imgVimg_rec"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/imgVimg_rec"
+                app:layout_constraintTop_toBottomOf="@+id/imgVimg_rec"
+                tools:ignore="HardcodedText,SmallSp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:text="Tempo de Preparo"
+                app:layout_constraintStart_toEndOf="@+id/imgVimg_rec"
+                app:layout_constraintTop_toBottomOf="@+id/edTxdes_rec"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/edTxtem_rec"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_edtxt"
+                android:gravity="center_horizontal"
+                android:hint="10"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="3"
+                android:nextFocusDown="@id/edTxren_rec"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textView3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Minutos"
+                app:layout_constraintStart_toEndOf="@+id/edTxtem_rec"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Rendimento"
+                app:layout_constraintStart_toStartOf="@+id/edTxtem_rec"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/edTxren_rec"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_edtxt"
+                android:gravity="center_horizontal"
+                android:hint="10"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="2"
+                android:nextFocusDown="@id/lnladdIngre"
+                app:layout_constraintEnd_toStartOf="@+id/textView5"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/edTxtem_rec"
+                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Porções"
+                app:layout_constraintStart_toStartOf="@+id/textView3"
+                app:layout_constraintTop_toTopOf="@+id/edTxren_rec"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:id="@+id/lnladdIngre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:elevation="5dp"
+                android:background="@drawable/custom_edtxt_borda"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edTxren_rec"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtAddIngre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:text="Ingredientes"
+                    android:textColor="#420651"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <ImageButton
+                    android:id="@+id/imgBtnAddIng"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    android:nextFocusDown="@id/imgBtnAddPre"
+                    android:src="@drawable/ic_add_24dp"
+                    tools:ignore="ContentDescription" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvIngredientes"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:scrollbars="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lnladdIngre" />
+
+            <LinearLayout
+                android:id="@+id/lnlAddPrep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp"
+                android:elevation="5dp"
+                android:background="@drawable/custom_edtxt_borda"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rcvIngredientes" >
+
+                <TextView
+                    android:id="@+id/txtAddPrep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Modo de Preparo"
+                    android:textColor="#420651"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <ImageButton
+                    android:id="@+id/imgBtnAddPre"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_add_24dp"
+                    tools:ignore="ContentDescription" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvModoPreparo"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:scrollbars="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lnlAddPrep" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

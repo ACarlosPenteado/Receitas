@@ -1,0 +1,66 @@
+ @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.salvarI:
+                if (desc.getText().length() == 0) {
+                    mostrarToast("AVISO", "Nome da Receita não pode estar vazio!");
+                    desc.requestFocus();
+                } else {
+                    if(fotoString == null){
+                        mostrarToast("AVISO", "Imagem da receita não pode estar vazia!");
+                        foto.requestFocus();
+                    } else {
+                        realm = Realm.getDefaultInstance();
+                        if (tipo_rec != null) {
+                            OK = DataHelper.alteraReceita(realm, id_rec, desc.getText().toString(), fotoString, temp.getText().toString(), rend.getText().toString());
+                            if (OK) {
+                                mostrarToast("AVISO", "Receita alterada!");
+                                limparCampos();
+                            } else {
+                                mostrarToast("AVISO", "Receita não alterada!");
+                            }
+                            //if( ql == 1 ){
+                                int i;
+                                for(i = 0; i < listIngre.size(); i++){
+                                    Number idNum = realm.where(Ingredientes.class).max("id_ing");
+                                    if( idNum == null){
+                                        nextId_ing = 1;
+                                    } else {
+                                        nextId_ing = idNum.intValue() + 1;
+                                    }
+                                    OK = DataHelper.novoIngrediente(realm, nextId_ing, id_rec,
+                                            listIngre.get( i ).getMtxtListQtd(),
+                                            listIngre.get( i ).getMtxtLisMed(),
+                                            listIngre.get( i ).getMtxtListIng());
+                                    if( !OK ){
+                                        mostrarToast("AVISO", "Ingrediente NÃO Salvo");
+                                    }
+                                }
+                                for(i = 0; i < listPrepa.size(); i++){
+                                    Number idNum = realm.where(ModoPreparo.class).max("id_mod");
+                                    if( idNum == null){
+                                        nextId_mod = 1;
+                                    } else {
+                                        nextId_mod = idNum.intValue() + 1;
+                                    }
+                                    OK = DataHelper.novoPreparo(realm, nextId_mod, id_rec,
+                                            listPrepa.get( i ).getMtxtListPrep());
+                                    if ( !OK ){
+                                        mostrarToast("AVISO","Modo de preparo NÃO Salvo");
+                                    }
+                                }
+                                realm.close();
+                            //} else if( ql == 2 ){
+
+                           // }
+                            Intent intent = new Intent( this, Listar_Receitas.class );
+                            intent.putExtra( "TIP_REC", tipo_rec );
+                            startActivity( intent );
+                        }
+                    }
+                }
+                break;
+            default:break;
+        }
+        return super.onOptionsItemSelected( item );
+    }

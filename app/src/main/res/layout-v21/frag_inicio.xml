@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/containerI"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/custom_tela1"
+    android:orientation="vertical"
+    tools:context=".ui.Drawer.Inicio.Inicio_Frag">
+
+    <AdapterViewFlipper
+        android:id="@+id/viewFlipperI"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@android:color/transparent"
+        android:fitsSystemWindows="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayoutBtn"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewFlipperI">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_view_container1"
+            android:layout_width="191dp"
+            android:layout_height="270dp"
+            android:layout_marginStart="10dp"
+            android:elevation="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/llDoces"
+                android:layout_width="191dp"
+                android:layout_height="270dp"
+                android:background="@drawable/custom_edtxtx"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="395dp">
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <ImageButton
+            android:id="@+id/imgBtnDoce"
+            android:layout_width="191dp"
+            android:layout_height="270dp"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="@+id/shimmer_view_container1"
+            app:layout_constraintEnd_toEndOf="@+id/shimmer_view_container1"
+            app:layout_constraintStart_toStartOf="@+id/shimmer_view_container1"
+            app:layout_constraintTop_toTopOf="@+id/shimmer_view_container1"
+            app:srcCompat="@mipmap/ic_doces"
+            tools:ignore="ContentDescription" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_view_container2"
+            android:layout_width="191dp"
+            android:layout_height="270dp"
+            android:layout_marginEnd="10dp"
+            android:elevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/llSalgadas"
+                android:layout_width="191dp"
+                android:layout_height="270dp"
+                android:background="@drawable/custom_edtxtx"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="234dp"
+                tools:layout_editor_absoluteY="386dp">
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <ImageButton
+            android:id="@+id/imgBtnSalgada"
+            android:layout_width="191dp"
+            android:layout_height="270dp"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="@+id/shimmer_view_container2"
+            app:layout_constraintEnd_toEndOf="@+id/shimmer_view_container2"
+            app:layout_constraintStart_toStartOf="@+id/shimmer_view_container2"
+            app:layout_constraintTop_toTopOf="@+id/shimmer_view_container2"
+            app:srcCompat="@mipmap/ic_salgadas"
+            tools:ignore="ContentDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/inicio">
+
+    <fragment
+        android:id="@+id/inicio"
+        android:name="acp.example.myapplication2.ui.Drawer.Inicio.Inicio_Frag"
+        android:label="Receitas"
+        tools:layout="@layout/frag_inicio" />
+
+    <fragment
+        android:id="@+id/busca"
+        android:name="acp.example.myapplication2.ui.Drawer.Busca.Busca_Frag"
+        android:label="Buscar na Internet"
+        tools:layout="@layout/frag_busca" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/backup"
+        android:name="acp.example.myapplication2.ui.Drawer.Backup.Backup_Frag"
+        android:label="Backup"
+        tools:layout="@layout/frag_backup" >
+    </fragment>
+
+</navigation>
