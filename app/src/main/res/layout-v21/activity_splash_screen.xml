@@ -14,7 +14,7 @@
 
     <AdapterViewFlipper
         android:id="@+id/viewFlipperS"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
@@ -31,7 +31,7 @@
     <RelativeLayout
         android:id="@+id/relativeLayoutS"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:layout_marginTop="20dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"

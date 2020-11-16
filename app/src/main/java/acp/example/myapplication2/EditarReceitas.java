@@ -84,7 +84,7 @@ public class EditarReceitas extends AppCompatActivity
     private EditText desc, temp, rend;
     String mqua, mmed, mdes, mprepa;
     private ImageView foto;
-    private Boolean OK = null;
+    private Boolean OK = true;
     private RecyclerView rcvIngre, rcvModo;
     private LayoutManager layoutManager;
     private Receitas listaReceitas;
@@ -193,7 +193,6 @@ public class EditarReceitas extends AppCompatActivity
         setTheme(R.style.MyTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_incluir_receitas);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER_PORTRAIT);
         Log.i(CATEGORIA, getLocalClassName());
 
         editarViewModel = new ViewModelProvider(this).get(SharedViewModel.class);
@@ -343,7 +342,7 @@ public class EditarReceitas extends AppCompatActivity
             Bitmap decodedImage = global.txtTOimg(fotoString);
             foto.setImageBitmap(decodedImage);
         }
-        realm.close();
+        //realm.close();
         rcvIngreMostrar1();
         rcvPrepaMostrar1();
     }
@@ -351,7 +350,7 @@ public class EditarReceitas extends AppCompatActivity
     private void rcvIngreMostrar1() {
         int i;
         listIngre = new ArrayList<>();
-        realm = Realm.getDefaultInstance();
+        //realm = Realm.getDefaultInstance();
         ingreAdapter = new MostrarListaIngre(realm.where(Ingredientes.class)
                 .equalTo("id_irec", id_rec).findAll());
         for (i = 0; i < ingreAdapter.getItemCount(); i++) {
@@ -381,13 +380,13 @@ public class EditarReceitas extends AppCompatActivity
             }
 
         });
-        realm.close();
+        //realm.close();
     }
 
     private void rcvPrepaMostrar1() {
         int i;
         listPrepa = new ArrayList<>();
-        realm = Realm.getDefaultInstance();
+        //realm = Realm.getDefaultInstance();
         prepAdapter = new MostraListaPreparo(realm.where(ModoPreparo.class)
                 .equalTo("id_mrec", id_rec).findAll());
         for (i = 0; i < prepAdapter.getItemCount(); i++) {
@@ -410,7 +409,7 @@ public class EditarReceitas extends AppCompatActivity
                 dialog2.show(getSupportFragmentManager(), "Incluir Modo de Preparo");
             }
         });
-        realm.close();
+        //realm.close();
     }
 
     @Override
@@ -435,9 +434,9 @@ public class EditarReceitas extends AppCompatActivity
                         realm = Realm.getDefaultInstance();
                         if (tipo_rec != null) {
                             OK = DataHelper.alteraReceita(realm, id_rec, desc.getText().toString(), fotoString, temp.getText().toString(), rend.getText().toString());
+                            mostrarToast(desc.getText().toString(), String.valueOf(OK));
                             if (OK) {
                                 mostrarToast("AVISO", "Receita alterada!");
-                                limparCampos();
                             } else {
                                 mostrarToast("AVISO", "Receita não alterada!");
                             }
@@ -454,7 +453,7 @@ public class EditarReceitas extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    private void limparCampos() {
+    /*private void limparCampos() {
         desc.setText("");
         foto.setImageResource(R.drawable.ic_menu_camera);
         temp.setText("");
@@ -462,7 +461,7 @@ public class EditarReceitas extends AppCompatActivity
         rcvIngre.setAdapter(null);
         rcvModo.setAdapter(null);
         desc.requestFocus();
-    }
+    }*/
 
     public void mostrarToast(String text1, String text2) {
         LayoutInflater inflater = getLayoutInflater();

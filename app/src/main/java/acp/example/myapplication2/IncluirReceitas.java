@@ -123,14 +123,14 @@ public class IncluirReceitas extends AppCompatActivity
         rcvPrepaMostrar(mprepa);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
-    @SuppressLint("SourceLockedOrientationActivity")
+   /* @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
+    @SuppressLint("SourceLockedOrientationActivity")*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.MyTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_incluir_receitas);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER_PORTRAIT);
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER_PORTRAIT);
 
         application = (Configuracao) getApplication();
 

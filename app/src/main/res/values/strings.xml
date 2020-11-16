@@ -32,5 +32,6 @@
     <string name="action_button_title">Adicionar</string>
     <string name="ajuda">ajuda</string>
     <string name="title_home">title</string>
+    <string name="backup">Backup</string>
 
 </resources>

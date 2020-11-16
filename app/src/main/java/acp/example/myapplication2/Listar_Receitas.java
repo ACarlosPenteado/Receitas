@@ -1,14 +1,9 @@
 package acp.example.myapplication2;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -17,9 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
-import com.google.android.material.snackbar.Snackbar;
 
-import acp.example.myapplication2.Fragmentos.Frag_dialog_deleta_receita;
 import acp.example.myapplication2.Fragmentos.Frag_dialog_vazia;
 import acp.example.myapplication2.Logic.Configuracao;
 import acp.example.myapplication2.Logic.DataHelper;
@@ -42,7 +35,6 @@ public class Listar_Receitas extends AppCompatActivity
     private ListarReceitas receitaAdapter;
     Configuracao application;
     ConstraintLayout constraintLayout;
-    FloatingTextButton fab1;
 
     public void confirmaVazia(Boolean confirma) {
         if (confirma) {
@@ -82,7 +74,6 @@ public class Listar_Receitas extends AppCompatActivity
 
         FloatingTextButton ftb = findViewById(R.id.add_button);
         constraintLayout = findViewById(R.id.listar);
-        fab1 = findViewById(R.id.fabAjuda1);
 
         String trec = "Lista de Receitas " + tipo_rec;
         textView.setText(trec);
@@ -106,25 +97,6 @@ public class Listar_Receitas extends AppCompatActivity
                 intent1.putExtra("TIP_REC", tipo_rec);
                 startActivity(intent1);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            }
-        });
-        fab1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar scb1 = Snackbar.make(constraintLayout, ajuda, Snackbar.LENGTH_INDEFINITE)
-                        .setBackgroundTint(Color.TRANSPARENT)
-                        .setActionTextColor(Color.RED)
-                        .setAction("X", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                Snackbar scb2 = Snackbar.make(constraintLayout,"", Snackbar.LENGTH_SHORT)
-                                        .setBackgroundTint(Color.TRANSPARENT);
-                                        //scb2.show();
-                            }
-                        }).setTextColor(Color.CYAN);
-
-
-                scb1.show();
             }
         });
 

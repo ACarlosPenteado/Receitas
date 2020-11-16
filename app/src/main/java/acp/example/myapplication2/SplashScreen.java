@@ -29,7 +29,7 @@ public class SplashScreen extends AppCompatActivity {
     private ProgressBar progressBar;
     Animation animation_in, animation_out;
     Animation fade_in, fade_out;
-    private static int SPLASH_TIME = 1000;
+    private static int SPLASH_TIME = 3000;
     private int progr = 0;
 
     @Override
@@ -83,8 +83,8 @@ public class SplashScreen extends AppCompatActivity {
                 if(progr <= 100){
                     text_view_progress.setText("" + progr + "%");
                     progressBar.setProgress(progr);
-                    progr = progr + 10;
-                    handler.postDelayed(this, 100);
+                    progr = progr + 5;
+                    handler.postDelayed(this, 200);
                 } else {
                     handler.removeCallbacks(this);
                     Intent i = new Intent(SplashScreen.this, MainActivity.class);

@@ -18,7 +18,7 @@
         android:hint="999"
         android:paddingTop="5dp"
         android:textAlignment="textEnd"
-        android:textColor="#FDAB04"
+        android:textColor="#FFD600"
         android:textStyle="bold"
         tools:ignore="HardcodedText" />
 
@@ -32,7 +32,7 @@
         android:layout_weight="1"
         android:hint="-"
         android:paddingTop="5dp"
-        android:textColor="#FDAB04"
+        android:textColor="#FFD600"
         android:textSize="15sp"
         android:textStyle="bold"
         tools:ignore="HardcodedText" />
@@ -47,7 +47,7 @@
         android:layout_weight="1"
         android:hint="Ingrediente"
         android:paddingTop="5dp"
-        android:textColor="#FDAB04"
+        android:textColor="#FFD600"
         android:textSize="15sp"
         android:textStyle="bold"
         tools:ignore="HardcodedText" />

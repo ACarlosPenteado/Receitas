@@ -18,7 +18,6 @@ public class Configuracao extends Application {
                 .name("Receitas.realm")
                 .schemaVersion(1)
                 .build();
-        Realm realmReceitas = Realm.getInstance( config );
         Realm.setDefaultConfiguration(config);
     }
 

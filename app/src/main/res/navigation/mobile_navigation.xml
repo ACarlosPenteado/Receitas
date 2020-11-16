@@ -25,4 +25,11 @@
         tools:layout="@layout/frag_backup" >
     </fragment>
 
+    <fragment
+        android:id="@+id/ajuda"
+        android:name="acp.example.myapplication2.ui.Drawer.Ajuda.Ajuda_Frag"
+        android:label="Ajuda"
+        tools:layout="@layout/frag_ajuda" >
+    </fragment>
+
 </navigation>

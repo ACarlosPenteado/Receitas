@@ -1,5 +1,7 @@
 package acp.example.myapplication2.Logic;
 
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 import acp.example.myapplication2.Model.Ingredientes;
@@ -18,20 +20,6 @@ public class DataHelper {
 
     public DataHelper(Realm realm) {
         this.realm = realm;
-    }
-
-    public void selectIngredientes(int id_irec){
-
-        ingredientes = realm.where(Ingredientes.class)
-                .equalTo("id_irec", id_irec).findAll();
-
-    }
-
-    public void selectModoPreparo(int id_irec){
-
-        modoPreparo = realm.where(ModoPreparo.class)
-                .equalTo("id_mrec", id_irec).findAll();
-
     }
 
     public void selectreceita(String tip_rec){
@@ -261,22 +249,20 @@ public class DataHelper {
     }
 
     public static Boolean alteraReceita(Realm realm, int id_rec, String des_rec, String img_rec, String tem_rec, String ren_rec) {
+
         if( realm == null ){
             saved = false;
         } else {
             try{
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-                        RealmResults<Receitas> receitas = realm.where(Receitas.class)
-                                .equalTo("id_rec", id_rec).findAll();
-                        receitas.setString("des_rec", des_rec);
-                        receitas.setString("img_rec", img_rec);
-                        receitas.setString("tem_rec", tem_rec);
-                        receitas.setString("ren_rec", ren_rec);
-                        saved = true;
-                    }
-                });
+                realm.beginTransaction();
+                Receitas receitas = realm.where(Receitas.class)
+                        .equalTo("id_rec", id_rec).findFirst();
+                receitas.setDes_rec(des_rec);
+                receitas.setImg_rec(img_rec);
+                receitas.setTem_rec(tem_rec);
+                receitas.setRen_rec(ren_rec);
+                realm.commitTransaction();
+                saved = true;
             } catch (RealmException e){
                 e.printStackTrace();
                 saved = false;

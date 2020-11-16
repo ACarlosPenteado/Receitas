@@ -22,7 +22,7 @@
         android:layout_height="30dp"
         android:layout_gravity="center_vertical"
         android:text="Modo Preparo"
-        android:textColor="#26C6DA"
+        android:textColor="#FFFF00"
         android:textSize="15sp"
         android:textStyle="bold"
         tools:ignore="HardcodedText" />

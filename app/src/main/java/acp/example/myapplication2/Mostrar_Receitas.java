@@ -72,8 +72,6 @@ public class Mostrar_Receitas extends AppCompatActivity
     Global global = new Global();
     private Boolean ok;
     Animation myAnim;
-    FloatingTextButton fab1;
-    ConstraintLayout constraintLayout;
 
     public void confirmaExclusao(Boolean confirma) {
         ok = confirma;
@@ -116,7 +114,6 @@ public class Mostrar_Receitas extends AppCompatActivity
         tipo_rec = intent.getStringExtra("TIP_REC");
         id_rec = intent.getIntExtra("ID_REC", 0);
 
-        fab1 = findViewById(R.id.fabAjuda1);
         ajuda = "Clique sobre a receita que quer ver" +
                 " ou clique no botão para adicionar uma nova";
 
@@ -161,25 +158,6 @@ public class Mostrar_Receitas extends AppCompatActivity
 
         realm.close();
 
-        fab1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar scb1 = Snackbar.make(constraintLayout, ajuda, Snackbar.LENGTH_INDEFINITE)
-                        .setBackgroundTint(Color.TRANSPARENT)
-                        .setActionTextColor(Color.RED)
-                        .setAction("X", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                Snackbar scb2 = Snackbar.make(constraintLayout,"", Snackbar.LENGTH_SHORT)
-                                        .setBackgroundTint(Color.TRANSPARENT);
-                                //scb2.show();
-                            }
-                        }).setTextColor(Color.CYAN);
-
-
-                scb1.show();
-            }
-        });
     }
 
     @Override

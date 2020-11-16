@@ -9,24 +9,6 @@
     android:background="@drawable/custom_tela1"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ru.dimorinny.floatingtextbutton.FloatingTextButton
-            android:id="@+id/fabAjuda1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="28dp"
-            app:floating_background_color="@color/primary4"
-            app:floating_left_icon="@drawable/ic_baseline_help_24"
-            app:floating_title="Ajuda"
-            app:floating_title_color="@color/primary2" />
-
-    </RelativeLayout>
-
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmer_view_container1"
         android:layout_width="wrap_content"

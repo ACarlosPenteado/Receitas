@@ -54,7 +54,6 @@ public class Inicio_Frag extends Fragment {
         setHasOptionsMenu(true);
         super.onCreate(savedInstanceState);
 
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -62,19 +61,20 @@ public class Inicio_Frag extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.frag_inicio, container, false);
         realm = Realm.getDefaultInstance();
-
         final BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 50;
         RealmResults<Receitas> listReceitas = realm.where(Receitas.class).findAll();
-        if( listReceitas.isEmpty()){
+        if (listReceitas.isEmpty()) {
             adapterViewFlipper = root.findViewById(R.id.viewFlipperI);
-            FlipperAdapterI flipperAdapter = new FlipperAdapterI(getContext(), novaImg2/*, novoTxt*/ );
+            FlipperAdapterI flipperAdapter = new FlipperAdapterI(getContext(), novaImg2/*, novoTxt*/);
             adapterViewFlipper.setAdapter(flipperAdapter);
+            adapterViewFlipper.setFlipInterval(10000);
+            adapterViewFlipper.setTransitionName("rotate");
             adapterViewFlipper.setAutoStart(true);
-            adapterViewFlipper.setFlipInterval(2000);
+
         } else {
-            for(int i = 0; i < listReceitas.size(); i++){
-                if(novaImg != null) {
+            for (int i = 0; i < listReceitas.size(); i++) {
+                if (novaImg != null) {
                     novoTxt.add(carregaTextFlipper(listReceitas.get(i).getDes_rec()));
                     novaImg.add(carregaImageFlipper(listReceitas.get(i).getImg_rec()));
                 }
@@ -89,15 +89,15 @@ public class Inicio_Frag extends Fragment {
             }
             adapterViewFlipper.startFlipping();
         }
-        realm.close();
+
 
         btnDoces = root.findViewById(R.id.imgBtnDoce);
         btnDoces.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( getActivity(), Listar_Receitas.class );
+                Intent intent = new Intent(getActivity(), Listar_Receitas.class);
                 intent.putExtra("TIP_REC", "Doces");
-                startActivity( intent );
+                startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
@@ -106,9 +106,9 @@ public class Inicio_Frag extends Fragment {
         btnSalgadas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( getActivity(), Listar_Receitas.class );
+                Intent intent = new Intent(getActivity(), Listar_Receitas.class);
                 intent.putExtra("TIP_REC", "Salgadas");
-                startActivity( intent );
+                startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
@@ -127,8 +127,8 @@ public class Inicio_Frag extends Fragment {
 
         llDoces = root.findViewById(R.id.llDoces);
         llSalgadas = root.findViewById(R.id.llSalgadas);
-//        llDoces.setAnimation(blink_anim);
-//        llSalgadas.setAnimation(blink_anim);
+        //        llDoces.setAnimation(blink_anim);
+        //        llSalgadas.setAnimation(blink_anim);
 
         return root;
     }
