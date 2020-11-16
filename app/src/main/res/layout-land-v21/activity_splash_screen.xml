@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/containerS"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/custom_tela1"
+    android:orientation="vertical"
+    app:layoutDescription="@xml/activity_splash_screen_scene1"
+    tools:context="acp.example.myapplication2.SplashScreen">
+
+    <AdapterViewFlipper
+        android:id="@+id/viewFlipperS"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@android:color/transparent"
+        android:fitsSystemWindows="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutS"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="400dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/viewFlipperS"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_view_container1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:elevation="5dp">
+
+            <TextView
+                android:id="@+id/txtLogo1"
+                android:layout_width="212dp"
+                android:layout_height="73dp"
+                android:fontFamily="@font/bungee"
+                android:text="Receitas"
+                android:textColor="#B419F6"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                tools:ignore="HardcodedText"
+                tools:layout_editor_absoluteX="279dp"
+                tools:layout_editor_absoluteY="31dp" />
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_view_container2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shimmer_view_container1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:elevation="5dp">
+
+            <TextView
+                android:id="@+id/txtLogo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/bungee"
+                android:text="da Sandra"
+                android:textColor="#B419F6"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                tools:ignore="HardcodedText" />
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@style/CircularDeterminateProgressBar"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@+id/shimmer_view_container2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shimmer_view_container2" />
+
+        <TextView
+            android:id="@+id/text_view_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shimmer_view_container2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="115dp"
+            android:textColor="@color/primary7"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
+            app:layout_constraintEnd_toEndOf="@+id/progress_bar"
+            app:layout_constraintStart_toStartOf="@+id/progress_bar"
+            app:layout_constraintTop_toTopOf="@+id/progress_bar"
+            tools:text="60%" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

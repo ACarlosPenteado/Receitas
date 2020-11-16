@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/motion1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/frag_ajuda_scene"
+    tools:context=".ui.Drawer.Ajuda.Ajuda_Frag">
+
+    <TextView
+        android:id="@+id/txtajuda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center_horizontal"
+        android:textAlignment="center"
+        android:textColor="#E040FB"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/img1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/ic_button_checked_blue_24dp"
+        app:layout_constraintBottom_toTopOf="@+id/img2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtajuda"
+        tools:ignore="ContentDescription" />
+
+    <Button
+        android:id="@+id/inicio"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="Início"
+        android:textColor="#18FFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img1"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/img2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/ic_button_checked_blue_24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img1"
+        tools:ignore="ContentDescription" />
+
+    <Button
+        android:id="@+id/listar"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="Listar"
+        android:textColor="#18FFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img2"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/img3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
+        android:src="@drawable/ic_button_checked_blue_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/incluir"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <Button
+        android:id="@+id/incluir"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="Incluir"
+        android:textColor="#18FFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img3"
+        app:layout_constraintTop_toBottomOf="@+id/listar"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/img4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
+        android:src="@drawable/ic_button_checked_blue_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mostrar"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <Button
+        android:id="@+id/mostrar"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="Mostrar"
+        android:textColor="#18FFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img4"
+        app:layout_constraintTop_toBottomOf="@+id/incluir"
+        tools:ignore="HardcodedText" />
+
+    <fragment
+        android:id="@+id/inicio_frag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:name="acp.example.myapplication2.ui.Drawer.Ajuda.Inicio_Frag_ajuda"
+        tools:ignore="FragmentTagUsage" />
+
+    <fragment
+        android:id="@+id/listar_frag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:name="acp.example.myapplication2.ui.Drawer.Ajuda.Listar_Frag_ajuda"
+        tools:ignore="FragmentTagUsage" />
+
+    <fragment
+        android:id="@+id/incluir_frag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:name="acp.example.myapplication2.ui.Drawer.Ajuda.Incluir_Frag_ajuda"
+        tools:ignore="FragmentTagUsage" />
+
+    <fragment
+        android:id="@+id/mostrar_frag"
+        android:name="acp.example.myapplication2.ui.Drawer.Ajuda.Mostrar_Frag_ajuda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="FragmentTagUsage" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
