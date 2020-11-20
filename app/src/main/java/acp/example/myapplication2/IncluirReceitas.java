@@ -175,12 +175,6 @@ public class IncluirReceitas extends AppCompatActivity
                             startActivityForResult(intent, GALERIA_IMAGENS);
                         }
                     });
-                    builder.setNeutralButton("Buscar na Internet", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface arg0, int arg1) {
-                            Frag_Busca_dialog dialog = new Frag_Busca_dialog();
-                            dialog.show(getSupportFragmentManager(), "Imagem da Internet");
-                        }
-                    });
                     AlertDialog alerta = builder.create();
                     alerta.show();
                 }
